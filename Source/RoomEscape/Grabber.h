@@ -7,6 +7,7 @@
 #include "Components/InputComponent.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Engine/World.h"
+#include "Components/PrimitiveComponent.h"
 #include "GameFramework/Actor.h"
 #include "DrawDebugHelpers.h"
 
@@ -37,6 +38,9 @@ private:
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 	UInputComponent* InputComponent = nullptr;
 
+	void FindPhysicsHandleComponent();
+	void SetupInputComponent();
 	void Grab();
 	void Release();
+	FHitResult GetPhysicsBodyHitResult() const;
 };
