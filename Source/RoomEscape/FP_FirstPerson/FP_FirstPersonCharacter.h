@@ -2,8 +2,11 @@
 
 #pragma once
 
+#include <vector>
+#include <memory>
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "InventoryItem.h"
 #include "FP_FirstPersonCharacter.generated.h"
 
 class UInputComponent;
@@ -28,7 +31,6 @@ class AFP_FirstPersonCharacter : public ACharacter
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FirstPersonCameraComponent;
-
 public:
 	AFP_FirstPersonCharacter();
 
@@ -59,7 +61,6 @@ public:
 	/* This is multiplied by the direction vector when the weapon trace hits something to apply velocity to the component that is hit */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	float WeaponDamage;
-
 protected:
 
 	/** Handler for a touch input beginning. */
